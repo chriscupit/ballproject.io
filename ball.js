@@ -2,6 +2,7 @@ var positionX = 100;
 var positionY = 0;
 var velocity = 100;
 var reverse = false;
+let x = 5;
 var ball = document.getElementById("ball");
 var ball2 = document.getElementById("ball2");
 var ball3 = document.getElementById("ball3");
@@ -12,6 +13,7 @@ var ball7 = document.getElementById("ball7");
 var ball8 = document.getElementById("ball8");
 var ball9 = document.getElementById("ball9");
 var ball10 = document.getElementById("ball10");
+do(
 function moveBall() {
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
   var Xmin = 0;
@@ -79,5 +81,6 @@ function moveBall() {
     reverse = !reverse;
   }
 }
+  while(x = 5);
 
 setInterval(moveBall, 200);
