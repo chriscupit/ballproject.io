@@ -19,6 +19,8 @@ function moveBall() {
 
   var Ymin = 0;
   var Ymax = 400;
+  context = myCanvas.getContext('2d');
+    context.beginPath();
 
   if (reverse) {
     positionX = positionX - velocity;
