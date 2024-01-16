@@ -81,7 +81,7 @@ var ball10 = document.getElementById("ball10");
  }
  if (
     velocity > 100){
-    velocity = velocity/2;}
+    velocity = velocity - 50;}
  if (
     positionX > Xmax ||
     positionX === Xmin ||
@@ -90,5 +90,5 @@ var ball10 = document.getElementById("ball10");
   ) {
     reverse = !reverse;
   }
-  setInterval(moveBall, 4000);
+  setInterval(moveBall, 400);
 }
