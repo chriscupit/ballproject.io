@@ -12,11 +12,12 @@ var ball7 = document.getElementById("ball7");
 var ball8 = document.getElementById("ball8");
 var ball9 = document.getElementById("ball9");
 var ball10 = document.getElementById("ball10");
-document.getElementById("button").onclick = moveBall;
+//document.getElementById("button").onclick = moveBall;
 //const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 //write a function that can change the position of the html element "ball"
 function moveBall() {
-    setInterval(moveBall, 300);
+    document.getElementById("button").onclick = moveBall;
+    //setInterval(moveBall, 500);
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
   var Xmin = 0;
   var Xmax = 400;
@@ -80,5 +81,6 @@ function moveBall() {
     reverse = !reverse;
   }
 }
+setInterval(moveBall, 500);
 
 
