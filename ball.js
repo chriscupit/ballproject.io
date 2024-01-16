@@ -16,7 +16,7 @@ var ball10 = document.getElementById("ball10");
 //const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 //write a function that can change the position of the html element "ball"
 function moveBall() {
-    document.getElementById("button").onclick = moveBall;
+    //document.getElementById("button").onclick = moveBall;
     //setInterval(moveBall, 500);
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
   var Xmin = 0;
