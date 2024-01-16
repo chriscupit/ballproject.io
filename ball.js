@@ -81,7 +81,7 @@ var ball10 = document.getElementById("ball10");
  }
  if (
     velocity > 100){
-    velocity = velocity - 50;}
+    velocity = 50;}
  if (
     positionX > Xmax ||
     positionX === Xmin ||
