@@ -14,7 +14,7 @@ var ball8 = document.getElementById("ball8");
 var ball9 = document.getElementById("ball9");
 var ball10 = document.getElementById("ball10");
 //const name = document.querySelector(".ball");
-document.getElementById("button").onclick;
+document.getElementById("button").addEventListener("click", moveBall);
 
 
 
