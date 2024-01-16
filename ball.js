@@ -90,5 +90,5 @@ var ball10 = document.getElementById("ball10");
   ) {
     reverse = !reverse;
   }
-  setInterval(moveBall, 400);
+  setInterval(moveBall, 4000);
 }
