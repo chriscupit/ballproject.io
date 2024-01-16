@@ -1,10 +1,10 @@
 document.getElementById("button").addEventListener("click", moveBall);
-
+function moveBall() {
 var positionX = 100;
 var positionY = 0;
 var velocity = 100;
 var reverse = false;
-function moveBall() {
+
 var ball = document.getElementById("ball");
 var ball2 = document.getElementById("ball2");
 var ball3 = document.getElementById("ball3");
