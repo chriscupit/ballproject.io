@@ -1,3 +1,4 @@
+function moveBall() {
 var positionX = 100;
 var positionY = 0;
 var velocity = 100;
@@ -21,8 +22,7 @@ document.getElementById("button").addEventListener("click", moveBall);
 //const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 //write a function that can change the position of the html element "ball"
 
-function moveBall() {
-    setInterval(moveBall, 400);
+
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
   var Xmin = 0;
   var Xmax = 400;
@@ -89,6 +89,5 @@ function moveBall() {
   ) {
     reverse = !reverse;
   }
-  
+  setInterval(moveBall, 400);
 }
-
