@@ -1,87 +1,33 @@
-document.getElementById("button").addEventListener("click", moveBall);
-function moveBall() {
-var positionX = 100;
+//Set global variable that would contain the position, velocity and the html element "ball"
+var positionX = 0;
 var positionY = 0;
 var velocity = 100;
 var reverse = false;
-
 var ball = document.getElementById("ball");
-var ball2 = document.getElementById("ball2");
-var ball3 = document.getElementById("ball3");
-var ball4 = document.getElementById("ball4");
-var ball5 = document.getElementById("ball5");
-var ball6 = document.getElementById("ball6");
-var ball7 = document.getElementById("ball7");
-var ball8 = document.getElementById("ball8");
-var ball9 = document.getElementById("ball9");
-var ball10 = document.getElementById("ball10");
-//const name = document.querySelector(".ball");
-//document.getElementById("button").addEventListener("click", moveBall);
 
-
-//const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 //write a function that can change the position of the html element "ball"
-
-
-  const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+function moveBall() {
+  // two x-axis coordinates
   var Xmin = 0;
-  var Xmax = 400;
+  var Xmax = 300;
 
+  // two y-axis coordinates
   var Ymin = 0;
-  var Ymax = 400;
-
+  var Ymax = 300;
 
   if (reverse) {
     positionX = positionX - velocity;
     positionY = positionY - velocity;
-    ball.style.left = getRandom(0, 600)+'px';
-    ball.style.top = getRandom(0, 600)+'px';
-      ball2.style.left = getRandom(0, 600)+'px';
-    ball2.style.top = getRandom(0, 600)+'px';
-       ball3.style.left = getRandom(0, 600)+'px';
-    ball3.style.top = getRandom(0, 600)+'px';
-      ball4.style.left = getRandom(0, 600)+'px';
-    ball4.style.top = getRandom(0, 600)+'px';
-      ball5.style.left = getRandom(0, 600)+'px';
-    ball5.style.top = getRandom(0, 600)+'px';
-       ball6.style.left = getRandom(0, 600)+'px';
-       ball6.style.top = getRandom(0, 600)+'px';
-       ball7.style.left = getRandom(0, 600)+'px';
-   ball7.style.top = getRandom(0, 600)+'px';
-     ball8.style.left = getRandom(0, 600)+'px';
-   ball8.style.top = getRandom(0, 600)+'px';
-     ball9.style.left = getRandom(0, 600)+'px';
-   ball9.style.top = getRandom(0, 600)+'px';
-      ball10.style.left = getRandom(0, 600)+'px';
-   ball10.style.top = getRandom(0, 600)+'px';
- } else {
-   positionX = positionX + velocity;
-   positionY = positionY + velocity;
-   ball.style.left = getRandom(0, 600)+'px';
-   ball.style.top = getRandom(0, 600)+'px';
-     ball2.style.left = getRandom(0, 600)+'px';
-   ball2.style.top = getRandom(0, 600)+'px';
-      ball3.style.left = getRandom(0, 600)+'px';
-   ball3.style.top = getRandom(0, 600)+'px';
-     ball4.style.left = getRandom(0, 600)+'px';
-   ball4.style.top = getRandom(0, 600)+'px';
-     ball5.style.left = getRandom(0, 600)+'px';
-   ball5.style.top = getRandom(0, 600)+'px';
-      ball6.style.left = getRandom(0, 600)+'px';
-   ball6.style.top = getRandom(0, 600)+'px';
-       ball7.style.left = getRandom(0, 600)+'px';
-   ball7.style.top = getRandom(0, 600)+'px';
-     ball8.style.left = getRandom(0, 600)+'px';
-   ball8.style.top = getRandom(0, 600)+'px';
-     ball9.style.left = getRandom(0, 600)+'px';
-   ball9.style.top = getRandom(0, 600)+'px';
-      ball10.style.left = getRandom(0, 600)+'px';
-   ball10.style.top = getRandom(0, 600)+'px';
- }
- if (
-    velocity > 100){
-    velocity = 50;}
- if (
+    ball.style.left = positionX + "px";
+    ball.style.top = positionY + "px";
+  } else {
+    positionX = positionX + velocity;
+    positionY = positionY + velocity;
+    ball.style.left = positionX + "px";
+    ball.style.top = positionY + "px";
+  }
+
+  if (
     positionX > Xmax ||
     positionX === Xmin ||
     positionY > Ymax ||
@@ -89,5 +35,6 @@ var ball10 = document.getElementById("ball10");
   ) {
     reverse = !reverse;
   }
-  setInterval(moveBall, 400);
 }
+
+setInterval(moveBall, 100);
