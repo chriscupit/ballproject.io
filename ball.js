@@ -1,6 +1,6 @@
-document.getElementById("button").addEventListener("click", moveBall);
+//document.getElementById("button").addEventListener("click", moveBall);
 function moveBall() {
-
+document.getElementById("button").addEventListener("click", moveBall);
 var positionX = 100;
 var positionY = 0;
 var velocity = 100;
