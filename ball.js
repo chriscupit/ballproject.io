@@ -1,5 +1,3 @@
-document.getElementById("button").addEventListener("click", moveBall);
-function moveBall() {
 var positionX = 100;
 var positionY = 0;
 var velocity = 100;
@@ -18,8 +16,8 @@ var ball10 = document.getElementById("ball10");
 //const name = document.querySelector(".ball");
 //document.getElementById("button").addEventListener("click", moveBall);
 
-
-
+function moveBall() {
+document.getElementById("button").addEventListener("click", moveBall);
 //const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 //write a function that can change the position of the html element "ball"
 
