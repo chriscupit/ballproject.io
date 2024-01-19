@@ -1,124 +1,140 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
 <head>
-    <meta charset = "UTF-8">
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8" />
+    <title>Ball Moving</title>
+    <style>* { padding: 0; margin: 0; } canvas { background: #eee; display: block; margin: 0 auto; }</style>
 </head>
-
 <body>
-<!--    <p>Refresh this page to see your code changes in action</p>   -->
-    <!-- YOUR CODE STARTS HERE -->
-    <div>
-    <p style="font-size:48px">Ball Project</p>
-    <p class = "ball">Click</class> 
-        <button id="button">moveBall</button>
-       <!-- <input id="button" type="submit" name="button" value="Add Balls" onclick="moveBall();" /><br/>-->
-   <!-- <button onClick = "moveBall()">Click</button>-->
-    </div>
-<script src="./ball.js"></script>
 
-    <div id="ball" style="z-index: 5;
-     position: absolute;
-     left: 0px;
-     top: 200px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: white;">
-    </div>
+<canvas id="myCanvas" width="480" height="320"></canvas>
 
-    <div id="ball2" style="z-index: 5;
-     position: absolute;
-     left: 100px;
-     top: 200px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: blue;">
-    </div>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var ctx2 = canvas.getContext("2d");
+    var ctx3 = canvas.getContext("2d");
+    var ctx4 = canvas.getContext("2d");
+    var ctx5 = canvas.getContext("2d");
+    var ballRadius = 10;
+    var x = canvas.width/2;
+    var cx = canvas.width/3;
+    var ax = canvas.width/4;
+    var bx = canvas.width/5;
+    var ex = canvas.width/6;
+    var y = canvas.height-30;
+    var cy = canvas.height-30;
+    var ay = canvas.height-30;
+    var by = canvas.height-30;
+    var ey = canvas.height-30;
+    var dx = 2;
+    var dy = -2;
+    var a = 3;
+    var b = -3;
+    var c = 4;
+    var d = -4;
+    var e = 3.5;
+    var f = -2.5;
+    var z = 1.2;
+    var w = -1.5;
 
-    <div id="ball3" style="z-index: 10;
-     position: absolute;
-     left: 300px;
-     top: 150px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: green;">
-    </div>
 
-    <div id="ball4" style="z-index: 10;
-     position: absolute;
-     left: 400px;
-     top: 200px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: brown;">
-    </div>
 
-    <div id="ball5" style="z-index: 10;
-     position: absolute;
-     left: 450px;
-     top: 50px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: purple;">
-    </div>
 
-    <div id="ball6" style="z-index: 10;
-     position: absolute;
-     left: 50px;
-     top: 500px;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background: orange;">
-    </div>
+    function drawBall(newball) {
+        
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
 
-    <div id="ball7" style="z-index: 10;
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     width: 75px;
-     height: 75px;
-     border-radius: 50%;
-     background: turquoise;">
-    </div>
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, ballRadius, 0, Math.PI*2);
+        ctx2.fillStyle = "green";
+        ctx2.fill();
+        ctx2.closePath();
 
-    <div id="ball8" style="z-index: 10;
-     position: absolute;
-     left: 325px;
-     top: 550px;
-     width: 50px;
-     height: 50px;
-     border-radius: 50%;
-     background: grey;">
-    </div>
+        ctx3.beginPath();
+        ctx3.arc(ax, ay, ballRadius, 0, Math.PI*2);
+        ctx3.fillStyle = "red";
+        ctx3.fill();
+        ctx3.closePath();
 
-    <div id="ball9" style="z-index: 10;
-     position: absolute;
-     left: 500px;
-     top: 500px;
-     width: 175px;
-     height: 175px;
-     border-radius: 50%;
-     background: yellow;">
-    </div>
+        ctx4.beginPath();
+        ctx4.arc(bx, by, ballRadius, 0, Math.PI*2);
+        ctx4.fillStyle = "yellow";
+        ctx4.fill();
+        ctx4.closePath();
 
-    <div id="ball10" style="z-index: 10;
-     position: absolute;
-     left: 250px;
-     top: 500px;
-     width: 125px;
-     height: 125px;
-     border-radius: 50%;
-     background: pink;">
-    </div>
+        ctx5.beginPath();
+        ctx5.arc(ex, ey, ballRadius, 0, Math.PI*2);
+        ctx5.fillStyle = "orange";
+        ctx5.fill();
+        ctx5.closePath();
+        
+    }
 
-    <!-- YOUR CODE ENDS HERE -->
+    function draw() {
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        ctx2.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        ctx3.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        ctx4.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        ctx5.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+
+        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+        }
+        if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+            dy = -dy;
+    }
+
+        if(cx + z > canvas.width-ballRadius || cx + z < ballRadius) {
+            z = -z;
+        }
+        if(cy + w > canvas.height-ballRadius || cy + w < ballRadius) {
+            w = -w;
+        }
+        if(ax + e > canvas.width-ballRadius || ax + e < ballRadius) {
+            e = -e;
+        }
+        if(ay + f > canvas.height-ballRadius || ay + f < ballRadius) {
+            f = -f;
+        }
+        if(bx + c > canvas.width-ballRadius || bx + c < ballRadius) {
+            c = -c;
+        }
+        if(by + d > canvas.height-ballRadius || by + d < ballRadius) {
+            d = -d;
+        }
+        if(ex + a > canvas.width-ballRadius || ex + a < ballRadius) {
+            a = -a;
+        }
+        if(ey + b > canvas.height-ballRadius || ey + b < ballRadius) {
+            b = -b;
+        }
+        x += dx;
+        y += dy;
+        cx += z;
+        cy += w;
+        ax += e;
+        ay += f;
+        bx += c;
+        by += d;
+        ex += a;
+        ey += b;
+    }
+    
+
+
+    setInterval(draw, 1);
+</script>
+
 </body>
-<!-- DO NOT EDIT PAST THIS POINT -->
-
 </html>
