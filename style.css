@@ -1,4 +1,27 @@
-  .navbar {
+body {
+    background-color:white;
+   
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+       }
+ p {
+    font-size: 2rem;
+ }
+ 
+ button {
+     padding: 7px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+
+.navbar {
     position: relative;
      overflow: hidden;
      background-color: #333;
@@ -76,24 +99,3 @@
    }
   
 
-body {
-    background-color:white;
-   
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-       }
- p {
-    font-size: 2rem;
- }
- 
- button {
-     padding: 7px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
- }
