@@ -1,4 +1,4 @@
-.navbar {
+  .navbar {
     position: relative;
      overflow: hidden;
      background-color: #333;
@@ -40,7 +40,7 @@
    
    /* Add a red background color to navbar links on hover */
    .navbar a:hover, .dropdown:hover .dropbtn {
-     background-color: rgb(35, 144, 10);
+     background-color: rgb(10, 106, 144);
    }
    
    /* Dropdown content (hidden by default) */
@@ -74,6 +74,7 @@
      display:block;
      position: fixed;
    }
+  
 
 body {
     background-color:white;
